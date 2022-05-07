@@ -20,53 +20,36 @@ public class HomeController {
 	private IVacantesService servicesVacantes;
 
 	@GetMapping("/tabla")
-	public String mostrarTabla(Model model) {
+	public String mostrarTabla(Model model) { //3 se crea el metodo tabla
 	 List<Vacante> lista= servicesVacantes.buscarTodas();//getVacantes se cambia por serviceVacantes , el nombre de la instancia del autowired
 	model.addAttribute("vacantes", lista);
 	return "tabla";
 	}
+	
 
 	@GetMapping("/detalle")
-	public String mostrarDetalle(Model model) {
-		Vacante vacante = new Vacante();
+	public String mostrarDetalle(Model model) { //2.se crea u nnuevo metodo
+		Vacante vacante = new Vacante(); //se crea u de tipo Vacante, se encuentra e importa del áquete model
 		vacante.setNombre("Ingeniero de Comunicaciones");
 		vacante.setDescripcion("Se solicita ingeniero para dar soporte");
 		vacante.setFecha(new Date());
 		vacante.setSalario(9700.0);
-		model.addAttribute("Vacante", vacante);
+		model.addAttribute("Vacante", vacante); //se agrega al modelo
 		return "detalle";
 
 	}
 
 	@GetMapping("/listado")
-	public String mostrarListado(Model model) {
-		List<String> lista = new LinkedList<String>();
+	public String mostrarListado(Model model) { //1. metodo mostrar listado
+		List<String> lista = new LinkedList<String>(); //cramos el arreglo llamado lista
 		lista.add("Ingeniro de Sistemas");
 		lista.add("Auxiliar de contabilidad");
 		lista.add("Vendedor");
 		lista.add("Arquitecto");
-		model.addAttribute("empleos", lista);
-		return "listado";
+		model.addAttribute("empleos", lista); // agregamos la lista al modelo
+		return "listado"; // se crea el arcvhivo html
 	}
 
-	@GetMapping("/")
-	public String mostrarHome(Model model) {
-		/*
-		 * model.addAttribute("mensaje","Bienvenido a empleos OWEN");
-		 * model.addAttribute("fecha", new Date ());
-		 */
-
-		String nombre = "Auxiliar de Contabilidad";
-		Date fechaPub = new Date();
-		double salario = 9000.0;
-		boolean vigente = true;
-
-		model.addAttribute("nombre", nombre);
-		model.addAttribute("fecha", fechaPub);
-		model.addAttribute("salario", salario);
-		model.addAttribute("vigente", vigente);
-
-		return "home";
-	}
+	
 
 }

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Vacante {
 	
-	private Integer id;
+	private Integer id; //definimos los atributos
 	private String nombre;
 	private String descripcion;
 	private Date fecha;

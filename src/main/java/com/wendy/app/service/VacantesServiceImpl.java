@@ -15,9 +15,9 @@ public class VacantesServiceImpl implements IVacantesService {
 	 private List<Vacante> lista = null;  //atributo privado copia de abajito
 
 	
-	public VacantesServiceImpl() { //constructor vamos a crar la lista de objetos de tipo vacante
-			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-			lista=new LinkedList<Vacante>();
+	public VacantesServiceImpl() { 
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy"); // una variable pRA DAR formato a las fechas
+			lista=new LinkedList<Vacante>();//crear u na lista enlasada con ebjeto de tipo vacante
 			try {
 				Vacante vacante1 = new Vacante();
 				vacante1.setId(1);
