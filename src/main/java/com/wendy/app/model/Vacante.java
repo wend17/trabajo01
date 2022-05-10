@@ -10,7 +10,7 @@ public class Vacante {
 	private Date fecha;
 	private Double salario;
 	private Integer destacado;
-	private String imagen="no-image.png";
+	private String imagen="no-image.png"; //valor x defecto cuandp no haya imagen
 	
 	
 	

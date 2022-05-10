@@ -23,7 +23,7 @@
 				<td>Salario Ofrecido</td>
 				<td>Descripción</td>
 				<td>Destacado</td>
-				<td>Detalle</td>
+			    <td>Detalle</td>  <!-- 	//despues de crear el html detalle -->
 				<td>Borrar</td>
 
 			</tr>
@@ -40,8 +40,8 @@
 					class="badge bg-success">Sí</span> <span
 					th:unless="${vacante.destacado==1}" class="badge bg-danger">No</span>
 				</td>
-				<td><a th:href="@{/vacantes/view/{id}(id=${vacante.id})}"
-					type="button" class="btn btn-success btn-sm">Detalle</a></td>
+				<td><a th:href="@{/vacantes/view/{id}(id=${vacante.id})}" 
+					type="button" class="btn btn-success btn-sm">Detalle</a></td> <!--para asociar la url al boton --><!-- 	// para crear el boton detalle -->
 				<td><a th:href="@{/vacantes/delete(id=${vacante.id})}"
 					type="button" class="btn btn-danger btn-sm">Borrar</a></td>
 			</tr>

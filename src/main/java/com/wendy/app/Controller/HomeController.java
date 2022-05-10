@@ -20,7 +20,7 @@ public class HomeController {
 	private IVacantesService servicesVacantes;
 
 	@GetMapping("/tabla")
-	public String mostrarTabla(Model model) { //3 se crea el metodo tabla
+	public String mostrarTabla(Model model) { //3 se crea el metodo tabla, 
 	 List<Vacante> lista= servicesVacantes.buscarTodas();//getVacantes se cambia por serviceVacantes , el nombre de la instancia del autowired
 	model.addAttribute("vacantes", lista);
 	return "tabla";
@@ -28,7 +28,7 @@ public class HomeController {
 	
 
 	@GetMapping("/detalle")
-	public String mostrarDetalle(Model model) { //2.se crea u nnuevo metodo
+	public String mostrarDetalle(Model model) { //2.se crea u nnuevo metodo /antes de esto se creo el model
 		Vacante vacante = new Vacante(); //se crea u de tipo Vacante, se encuentra e importa del áquete model
 		vacante.setNombre("Ingeniero de Comunicaciones");
 		vacante.setDescripcion("Se solicita ingeniero para dar soporte");
@@ -37,17 +37,6 @@ public class HomeController {
 		model.addAttribute("Vacante", vacante); //se agrega al modelo
 		return "detalle";
 
-	}
-
-	@GetMapping("/listado")
-	public String mostrarListado(Model model) { //1. metodo mostrar listado
-		List<String> lista = new LinkedList<String>(); //cramos el arreglo llamado lista
-		lista.add("Ingeniro de Sistemas");
-		lista.add("Auxiliar de contabilidad");
-		lista.add("Vendedor");
-		lista.add("Arquitecto");
-		model.addAttribute("empleos", lista); // agregamos la lista al modelo
-		return "listado"; // se crea el arcvhivo html
 	}
 
 	
